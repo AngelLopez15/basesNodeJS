@@ -6,6 +6,7 @@ const { arch } = require("os")
 const { error } = require("console")
 
 const argv = require('./config/yargs').argv
+var colors = require('colors');
 
 // Para acceder al arreglo donde el argv almacena las entradas
 let comando = argv._[0]

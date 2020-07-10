@@ -1,9 +1,14 @@
 const fs = require('fs');
+var colors = require('colors');
 const { resolve } = require('path');
 const { rejects } = require('assert');
 
 // Funcion para listar archivos de la tabla
 const listarTabla = (base, limite=10) => {
+
+    console.log('================')
+    console.log(`Tabla de ${base}`)
+    console.log('================')
 
     for (let i = 1; i <= limite; i++) {
        console.log(`${base} * ${i} = ${base*i}\n`)
@@ -31,7 +36,7 @@ const crearArchivo = (base, limite=10) =>{
             if (err) {
                 reject(err);
             }else{
-                resolve(`tabla-${base}-al-${limite}.txt`) 
+                resolve(colors.green(`tabla-${base}-al-${limite}.txt`)) 
             }
         });
         
