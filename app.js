@@ -5,29 +5,7 @@ const { crearArchivo, listarTabla } = require("./multiplicar/multiplicar")
 const { arch } = require("os")
 const { error } = require("console")
 
-const argv = require('yargs')
-    .command('listar', 'impreme en consola la tabla de multiplicar',{
-        base:{
-            demand:true,
-            alias:'b'
-        },
-        limite:{
-            alias:'l',
-            default:10
-        }
-    })
-    .command('crear', 'genera un archivo con la tabla de multiplicar',{
-        base:{
-            demand:true,
-            alias:'b'
-        },
-        limite:{
-            alias:'l',
-            default:10
-        }
-    })
-    .help()
-    .argv
+const argv = require('./config/yargs').argv
 
 // Para acceder al arreglo donde el argv almacena las entradas
 let comando = argv._[0]
